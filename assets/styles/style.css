@@ -3,21 +3,29 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: center;
+}
+
+.main-content {
+  display: flex;
+  padding: 20px;
+  padding-left: 300px; /* Ensure 300px padding on the left */
+  padding-right: 300px; /* Ensure 300px padding on the right */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1600px; /* Optional: to limit max width of main content */
 }
 
 /* Side menu styling */
 .side-menu {
-  position: fixed;
-  left: 0;
-  top: 0;
   width: 200px;
-  height: 100%;
   background-color: #1E2945;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
   box-sizing: border-box;
+  margin-right: 20px; /* Space between the menu and content */
 }
 
 .side-menu .logo img {
@@ -55,14 +63,9 @@ body {
   background-color: #374165; /* Slightly lighter shade for hover effect */
 }
 
-/* Main content styling */
-.main-content {
-  margin-left: 200px; /* Offset for the side menu */
-  padding: 20px;
-  box-sizing: border-box;
+/* Actual content styling */
+.content-area {
   flex-grow: 1;
-  padding-left: 300px; /* Add left padding */
-  padding-right: 300px; /* Add right padding */
 }
 
 /* Gallery styling */
@@ -70,7 +73,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  max-width: calc(100% - 600px); /* Consider padding on both sides */
 }
 
 .gallery-item {
