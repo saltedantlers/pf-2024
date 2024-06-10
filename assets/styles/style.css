@@ -117,3 +117,10 @@ body {
   border-top: 1px solid #ddd;
   text-align: center;
 }
+
+.main-content {
+  margin-left: 200px; /* Offset for the side menu */
+  padding: 20px;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
