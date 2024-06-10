@@ -28,7 +28,7 @@ body {
   align-items: center;
   padding-top: 20px;
   box-sizing: border-box;
-  margin-right: 20px; /* Space between the menu and content */
+  margin-right: 64px; /* Space between the menu and content */
   background-color: transparent; /* Remove the background color */
 }
 
