@@ -30,6 +30,7 @@ body {
   padding-top: 20px;
   box-sizing: border-box;
   margin-right: 20px; /* Space between the menu and content */
+  background-color: transparent; /* Remove the background color */
 }
 
 .side-menu .logo img {
