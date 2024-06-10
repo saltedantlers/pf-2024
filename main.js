@@ -7,22 +7,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const isExpanded = item.classList.contains('expanded');
 
       // Remove the expanded class from all items
-      galleryItems.forEach(i => i.classList.remove('expanded'));
+      galleryItems.forEach(i => {
+        i.classList.remove('expanded');
+        const overlay = i.querySelector('.overlay');
+        const description = i.querySelector('.description');
+        if (description) description.remove(); // Remove the description if it exists
+        overlay.style.position = 'absolute'; // Restore overlay position for non-expanded items
+      });
 
       if (!isExpanded) {
         // Add the expanded class to the clicked item
         item.classList.add('expanded');
 
-        // Create and insert the title and description elements
-        const title = document.createElement('div');
-        title.className = 'overlay';
-        title.innerText = item.dataset.title;
+        // Update the overlay position for the expanded item
+        const overlay = item.querySelector('.overlay');
+        overlay.style.position = 'static';
 
+        // Create and insert the description element
         const description = document.createElement('div');
         description.className = 'description';
         description.innerText = item.dataset.description;
 
-        item.appendChild(title);
         item.appendChild(description);
       }
     });
