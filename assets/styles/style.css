@@ -3,9 +3,9 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
 }
 
+/* Side menu styling */
 .side-menu {
   position: fixed;
   left: 0;
@@ -55,12 +55,22 @@ body {
   background-color: #374165; /* Slightly lighter shade for hover effect */
 }
 
+/* Main content styling */
+.main-content {
+  margin-left: 200px; /* Offset for the side menu */
+  padding: 20px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding-left: 300px; /* Add left padding */
+  padding-right: 300px; /* Add right padding */
+}
+
+/* Gallery styling */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  max-width: 1250px;
-  margin: 20px;
+  max-width: calc(100% - 600px); /* Consider padding on both sides */
 }
 
 .gallery-item {
@@ -116,14 +126,4 @@ body {
   background: #f4f4f4;
   border-top: 1px solid #ddd;
   text-align: center;
-}
-
-/* Main content styling */
-.main-content {
-  margin-left: 200px; /* Offset for the side menu */
-  padding: 20px;
-  box-sizing: border-box;
-  flex-grow: 1;
-  padding-left: 300px; /* Add left padding */
-  padding-right: 300px; /* Add right padding */
 }
