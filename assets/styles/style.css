@@ -118,9 +118,12 @@ body {
   text-align: center;
 }
 
+/* Main content styling */
 .main-content {
   margin-left: 200px; /* Offset for the side menu */
   padding: 20px;
   box-sizing: border-box;
   flex-grow: 1;
+  padding-left: 300px; /* Add left padding */
+  padding-right: 300px; /* Add right padding */
 }
