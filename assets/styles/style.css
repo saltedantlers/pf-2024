@@ -8,7 +8,6 @@ body {
 
 .main-container {
   width: 100%;
-  max-width: 1600px; /* Optional: max width for the main content area */
   padding-left: 300px; /* Ensure 300px padding on the left */
   padding-right: 300px; /* Ensure 300px padding on the right */
   box-sizing: border-box;
@@ -76,6 +75,7 @@ body {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  min-width: 800px;
   gap: 16px;
 }
 
