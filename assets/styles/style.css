@@ -6,14 +6,18 @@ body {
   justify-content: center;
 }
 
-.main-content {
-  display: flex;
-  padding: 20px;
+.main-container {
+  width: 100%;
+  max-width: 1600px; /* Optional: max width for the main content area */
   padding-left: 300px; /* Ensure 300px padding on the left */
   padding-right: 300px; /* Ensure 300px padding on the right */
   box-sizing: border-box;
-  width: 100%;
-  max-width: 1600px; /* Optional: to limit max width of main content */
+}
+
+/* Main content styling */
+.main-content {
+  display: flex;
+  padding: 20px;
 }
 
 /* Side menu styling */
