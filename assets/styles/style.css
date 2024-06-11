@@ -8,6 +8,7 @@ body {
 
 .main-container {
   width: 100%;
+  max-width: 1600px; /* Optional: max width for the main content area */
   padding-left: 300px; /* Ensure 300px padding on the left */
   padding-right: 300px; /* Ensure 300px padding on the right */
   box-sizing: border-box;
@@ -27,7 +28,7 @@ body {
   align-items: center;
   padding-top: 20px;
   box-sizing: border-box;
-  margin-right: 64px; /* Space between the menu and content */
+  margin-right: 20px; /* Space between the menu and content */
   background-color: transparent; /* Remove the background color */
 }
 
@@ -48,7 +49,7 @@ body {
 .menu-button {
   width: 200px;
   height: 50px;
-  background-color: #1E2945;
+  background-color: #1E2945; /* Keep the button blue */
   color: white;
   text-decoration: none;
   display: flex;
@@ -75,7 +76,6 @@ body {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  min-width: 800px;
   gap: 16px;
 }
 
@@ -132,4 +132,9 @@ body {
   background: #f4f4f4;
   border-top: 1px solid #ddd;
   text-align: center;
+}
+
+/* Ensure hover effect remains for inactive items */
+.inactive:hover .overlay {
+  opacity: 1;
 }
