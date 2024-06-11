@@ -4,66 +4,58 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  flex-direction: column; /* Aligns the header and content vertically */
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Fixed Header Styling */
-.site-header {
+/* Fixed Header */
+.header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 64px;
   background-color: #1E2945;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   box-sizing: border-box;
-  z-index: 1000; /* Ensure header is above other content */
+  z-index: 1000;
 }
 
-.header-left {
+.header .social-icons {
   display: flex;
-  align-items: center;
+  gap: 10px;
 }
 
-.social-icon {
-  margin-right: 16px; /* Space between icons */
-  display: inline-block;
-}
-
-.social-icon img {
+.header .social-icon {
   width: 48px;
   height: 48px;
   border-radius: 50%;
 }
 
-.header-right {
-  display: flex;
-  align-items: center;
+.header .artist-name {
+  font-size: 24px;
 }
 
-.site-name {
+.header .artist-name a {
   color: white;
   text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
 }
 
 .main-container {
-  width: 80%; /* Change max width to 80% of the window size */
+  width: 80%; /* Change to 80% of the window size */
   padding-left: 300px; /* Ensure 300px padding on the left */
   padding-right: 300px; /* Ensure 300px padding on the right */
   box-sizing: border-box;
-  margin-top: 64px; /* Space for the fixed header */
+  margin-top: 64px; /* Offset for the fixed header */
 }
 
 /* Main content styling */
 .main-content {
   display: flex;
   padding: 20px;
-  margin-top: 64px; /* Additional space for the fixed header */
+  padding-top: 64px; /* Additional offset for content spacing */
 }
 
 /* Side menu styling */
@@ -74,7 +66,7 @@ body {
   align-items: center;
   padding-top: 20px;
   box-sizing: border-box;
-  margin-right: 64px; /* Increase space between the menu and content */
+  margin-right: 64px; /* Change the spacing between the menu and content to 64px */
   background-color: transparent; /* Remove the background color */
 }
 
@@ -118,10 +110,10 @@ body {
   flex-grow: 1;
 }
 
-/* Gallery styling */
+/* Gallery styling using CSS Grid */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Automatically adjust columns */
   gap: 32px; /* Increase spacing between thumbnails */
 }
 
@@ -129,10 +121,7 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  flex: 1 1 calc(33.333% - 64px); /* 3 items per row with 32px gap on each side */
-  max-width: calc(33.333% - 64px);
-  min-width: 300px; /* Minimum width of 300px */
-  transition: transform 0.3s ease, flex 0.3s ease; /* Add transition for zoom effect */
+  transition: transform 0.3s ease; /* Add transition for zoom effect */
 }
 
 .gallery-item img {
@@ -164,8 +153,7 @@ body {
 }
 
 .expanded {
-  flex: 1 1 100%;
-  max-width: 100%;
+  grid-column: span 6; /* Expand to cover all columns */
 }
 
 .expanded img {
