@@ -44,4 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Re-enable hover effect for all items after expansion is closed
+  galleryItems.forEach(item => {
+    item.addEventListener('mouseleave', () => {
+      galleryItems.forEach(i => {
+        if (!i.classList.contains('expanded')) {
+          i.classList.remove('inactive');
+        }
+      });
+    });
+  });
 });
