@@ -76,15 +76,16 @@ body {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 32px; /* Increase spacing between thumbnails */
 }
 
 .gallery-item {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  flex: 1 1 calc(33.333% - 32px); /* 3 items per row with 16px gap */
-  max-width: calc(33.333% - 32px);
+  flex: 1 1 calc(33.333% - 64px); /* 3 items per row with 32px gap on each side */
+  max-width: calc(33.333% - 64px);
+  min-width: 300px; /* Minimum width of 300px */
   transition: transform 0.3s ease, flex 0.3s ease; /* Add transition for zoom effect */
 }
 
@@ -126,6 +127,10 @@ body {
   transform: scale(1.1); /* Zoom effect when expanded */
 }
 
+.expanded:hover img {
+  transform: none; /* Remove hover zoom on expanded images */
+}
+
 .expanded .overlay {
   position: static;
   background: none;
@@ -148,14 +153,14 @@ body {
 /* Responsive layout adjustments */
 @media (max-width: 1200px) {
   .gallery-item {
-    flex: 1 1 calc(50% - 32px); /* 2 items per row */
-    max-width: calc(50% - 32px);
+    flex: 1 1 calc(50% - 64px); /* 2 items per row */
+    max-width: calc(50% - 64px);
   }
 }
 
 @media (max-width: 768px) {
   .gallery-item {
-    flex: 1 1 calc(100% - 32px); /* 1 item per row */
-    max-width: calc(100% - 32px);
+    flex: 1 1 calc(100% - 64px); /* 1 item per row */
+    max-width: calc(100% - 64px);
   }
 }
