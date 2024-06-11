@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Check if the item is already expanded
       const isExpanded = item.classList.contains('expanded');
 
-      // Remove the expanded class and clean up any existing descriptions
+      // Remove the expanded class and clean up any existing descriptions from all items
       galleryItems.forEach(i => {
         i.classList.remove('expanded');
+        i.classList.remove('inactive'); // Remove the inactive class from other items
         const description = i.querySelector('.description');
         if (description) description.remove(); // Remove the description if it exists
-        // Restore overlay styles
         const overlay = i.querySelector('.overlay');
         if (overlay) overlay.style.position = 'absolute';
         overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
@@ -36,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
         description.innerText = item.dataset.description;
 
         item.appendChild(description);
+
+        // Add inactive class to other items to keep their hover effect
+        galleryItems.forEach(i => {
+          if (i !== item) i.classList.add('inactive');
+        });
       }
     });
   });
