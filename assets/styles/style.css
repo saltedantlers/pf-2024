@@ -85,13 +85,18 @@ body {
   cursor: pointer;
   flex: 1 1 calc(33.333% - 32px); /* 3 items per row with 16px gap */
   max-width: calc(33.333% - 32px);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, flex 0.3s ease; /* Add transition for zoom effect */
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.3s ease; /* Zoom transition on click */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .gallery-item .overlay {
@@ -118,6 +123,7 @@ body {
 
 .expanded img {
   width: 100%;
+  transform: scale(1.1); /* Zoom effect when expanded */
 }
 
 .expanded .overlay {
@@ -137,4 +143,19 @@ body {
 /* Ensure hover effect remains for inactive items */
 .inactive:hover .overlay {
   opacity: 1;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 1200px) {
+  .gallery-item {
+    flex: 1 1 calc(50% - 32px); /* 2 items per row */
+    max-width: calc(50% - 32px);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    flex: 1 1 calc(100% - 32px); /* 1 item per row */
+    max-width: calc(100% - 32px);
+  }
 }
