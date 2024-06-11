@@ -4,20 +4,66 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
+  flex-direction: column; /* Aligns the header and content vertically */
+}
+
+/* Fixed Header Styling */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #1E2945;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure header is above other content */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  margin-right: 16px; /* Space between icons */
+  display: inline-block;
+}
+
+.social-icon img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.site-name {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .main-container {
-  width: 100%;
-  max-width: 1600px; /* Optional: max width for the main content area */
+  width: 80%; /* Change max width to 80% of the window size */
   padding-left: 300px; /* Ensure 300px padding on the left */
   padding-right: 300px; /* Ensure 300px padding on the right */
   box-sizing: border-box;
+  margin-top: 64px; /* Space for the fixed header */
 }
 
 /* Main content styling */
 .main-content {
   display: flex;
   padding: 20px;
+  margin-top: 64px; /* Additional space for the fixed header */
 }
 
 /* Side menu styling */
@@ -28,7 +74,7 @@ body {
   align-items: center;
   padding-top: 20px;
   box-sizing: border-box;
-  margin-right: 20px; /* Space between the menu and content */
+  margin-right: 64px; /* Increase space between the menu and content */
   background-color: transparent; /* Remove the background color */
 }
 
